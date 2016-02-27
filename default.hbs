@@ -12,17 +12,17 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" type="image/x-icon" href="https://ghost.org/assets/favicon-e13fe17b11ad125601924cfb260f20da.ico">
+    <link rel="shortcut icon" type="image/png" href="https://bouncelytics.com/favicon-32x32.png">
 
     {{! Styles'n'Scripts }}
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-    <link href="https://ghost.org/assets/application-b28ae7a39daa8bb1cafe1e9aa145df74.css" media="all" rel="stylesheet">
+    <link href="{{asset "css/ghost.css" }}" media="all" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/ba.css"}}" />
 
-    <meta property="twitter:site" content="@TryGhost">
-    <meta property="twitter:domain" content="Ghost.org" />
-    <meta property="og:site_name" content="Ghost" />
-    <meta property="fb:admins" content="511697361" />
+    <meta property="twitter:site" content="@bouncelytics">
+    <meta property="twitter:domain" content="Bouncelytics.com" />
+    <meta property="og:site_name" content="Bouncelytics Blog" />
 
     {{ghost_head}}
 </head>
@@ -31,15 +31,14 @@
     <header id="global-header" class="global-header navbar">
        <nav role="navigation">
            <div class="wrapper">
-               <a class="ghost-logo" href="https://ghost.org/"><span>Ghost</span></a>
+               <a  href="https://bouncelytics.com/"><img src="{{ asset "images/logo-dark.png" }}" class="ba-logo"></a>
                <button type="button" class="mobile-menu" data-toggle="closed" data-target=".nav-collapse">
                <span class="hidden">Menu</span>
                </button>
                <ul id="main-menu" class="nav-collapse closed">
-                   <li><a href="//ghost.org/about/">About</a></li>
-                   <li><a href="http://marketplace.ghost.org">Marketplace</a></li>
-                   <li><a href="http://support.ghost.org/">Support</a></li>
-                   <li class="current extra"><a href="//blog.ghost.org">Blog</a></li>
+                   <li><a href="https://bouncelytics.com/pricing">Pricing</a></li>
+                   <li><a href="https://bouncelytics/features">Features</a></li>
+                    <li><a href="http://blog.bouncelytics.com">Blog</a></li>
                    <li><a class="signup" href="//ghost.org/signup/">Sign Up</a></li>
                    <li><a class="login" href="//ghost.org/login/">Log in</a></li>
                </ul>
@@ -48,11 +47,6 @@
     </header>
 
     <main class="blog-wrapper" role="main">
-        <header class="blog-header">
-            <nav class="blog-nav">
-                {{navigation}}
-            </nav>
-        </header>
         <div class="page-wrapper">
             {{{body}}}
             <div class="clearfix"></div>
@@ -70,7 +64,7 @@
                     <form action="{{! populated via code injection}}" method="post">
                         <input id="fieldEmail" name="{{! populated via code injection}}" type="email" placeholder="Your email address" required />
                         <button class="button-add wide" type="submit">Send me the good stuff</button>
-                        <p><strong>Privacy policy:</strong> No spam. No jibber jabber. Unsubscribe any time.</p>
+                        <p><strong>Privacy policy:</strong> No spam. Unsubscribe any time.</p>
                     </form>
                 </div>
             </div>
@@ -79,37 +73,37 @@
 
     <div class="clearfix"></div>
 
-    <footer id="global-footer">
-        <nav id="footer-nav" role="navigation">
-            <ul id="footer-menu">
-                <li class="logo"><a href="/"><img alt="Ghost" src="https://ghost.org/assets/logo-minighost-0f5476cf6a52adff2f2a67e4f16d3e29.png"></a></li>
-                <li><a class="" href="//ghost.org/about/">About</a></li>
-                <li><a href="http://status.ghost.org">Status</a></li>
-                <li><a class="" href="//ghost.org/pricing/">Pricing</a></li>
-                <li><a href="http://blog.ghost.org">Blog</a></li>
-                <li><a class="" href="//ghost.org/about/terms/">Terms</a></li>
-                <li><a class="" href="//ghost.org/about/privacy/">Privacy</a></li>
-                <li><a class="" href="//ghost.org/about/contact/">Contact</a></li>
-            </ul>
-            <div class="clearfix"></div>
+<footer class="footer">
+    <div class="container">
+        <div class="grid  grid--center">
+            <div class="grid__item one-fifth">
+                <p class="footer__heading">Product</p>
 
-            <span class="poweredby"><img alt="Ghost" src="https://ghost.org/assets/logo-minidigitalocean-1bb39c0755ac79befc56ca39d7889eb5.png"> Powered <em>by</em> <a href="https://digitalocean.com" target="_blank">DigitalOcean</a></span>
+                <ul class="nav  nav--stacked  footer__nav">
+                    <li><a href="https://bouncelytics.com/pricing">Pricing</a></li>
+                    <li><a href="https://bouncelytics.com/features">Features</a></li>
+                    <li><a href="https://blog.bouncelytics.com">Blog</a></li>
+                    <li><a href="/cdn-cgi/l/email-protection#fa929f969695ba98958f94999f96838e939989d4999597">Contact Us</a></li>
+                </ul>
+            </div><div class="grid__item one-fifth">
+                <p class="footer__heading">Connect</p>
 
-            <ul id="social-menu">
-                <li class="github"><a href="https://github.com/tryghost/Ghost"><span class="hidden">Github</span></a></li>
-                <li class="twitter"><a href="https://twitter.com/tryghost"><span class="hidden">Twitter</span></a></li>
-                <li class="gplus"><a href="https://plus.google.com/u/0/b/114465948129362706086/114465948129362706086/posts"><span class="hidden">Google+</span></a></li>
-                <li class="facebook"><a href="https://www.facebook.com/ghost"><span class="hidden">Facebook</span></a></li>
-            </ul>
-
-        </nav>
-        <div class="clearfix"></div>
-    </footer>
+                <ul class="nav  nav--stacked  footer__nav">
+                    <li><a href="https://facebook.com/bouncelytics">Facebook</a></li>
+                    <li><a href="https://twitter.com/bouncelytics">Twitter</a></li>
+                    <li><a href="https://github.com/bouncelytics">Github</a></li>
+                </ul>
+            </div><div class="grid__item one-fifth">
+                <img src="{{ asset "images/logo-bottom.png" }}" width="113px" alt="">
+                <p class="copyright">Copyright © 2016 Bouncelytics. </p>
+            </div>
+        </div>
+    </div>
+</footer>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     {{ghost_foot}}
 
-    <script src="https://ghost.org/navigation/"></script>
 
     <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
